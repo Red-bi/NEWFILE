@@ -56,6 +56,7 @@ int main() {
 }
     */
 ///Номер 15
+/*
 using namespace std;
 int max(int a[], int n) {
     if (n==1) return a[0];
@@ -69,5 +70,55 @@ int main() {
     for (int i=0; i<n; i++)
         cin >> a[i];
     cout <<max(a,n);
+    return 0;
+}*/
+/*
+#include <iostream>
+using namespace std;
+
+///ЧАСТЬ 3
+///номер 24
+int C(int n,int 
+k){
+if(k==0||k==n)return 1;
+return C(n-1,k-1)+C(n-1,k);
+}
+
+///номер 25
+int power(int n){
+if(n==1)return 1;
+if(n<=0||n%2!=0)return 0;
+return power(n/2);
+}
+
+int main(){
+int n,k;
+cin>>n>>k;
+cout<<C(n,k)<<endl;
+cin>>n;
+cout<<power(n);
+return 0;
+}
+*/
+///Задача (д/з) 22
+void transpose(int matrix[][3], int size) {
+    for (int i = 0; i < size; ++i) {
+        for (int j = i + 1; j < size; ++j) {
+            int temp = matrix[i][j];
+            matrix[i][j] = matrix[j][i];
+            matrix[j][i] = temp;
+        }
+    }
+}
+int main() {
+    int size = 3;
+    int myMatrix[3][3] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+    transpose(myMatrix, size);
+    for (int i = 0; i < size; ++i) {
+        for (int j = 0; j < size; ++j) {
+            std::cout << myMatrix[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
     return 0;
 }
